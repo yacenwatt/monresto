@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="projet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Mon Resto</title>
+</head>
+<body>
+     <div class="container"><!--contenaire du site -->
+        <header class="header"><!--en-tête du site -->
+            <div><!--bloc pour le logo du site -->
+                <img src="images/logo.png" alt="">
+            </div>
+            <div><!--bloc pour le contact du site -->
+                <h3><i class="fa-solid fa-phone"></i>&nbsp;Appelez nous: 02/123.45.67</h3>
+                <!--br&nbsp; est utilisé pour éviter le retour à la ligne automatique dans une phrase.-->
+            </div>
+        </header>
+        <section class="carrousel"><!-- création du carrousel -->
+             <div class="images"><!--bloc pour les images -->
+                <img class="slider-item" src="images/01.jpg">
+                <img class="slider-item" src="images/02.jpg">
+                <img class="slider-item" src="images/03.jpg">
+             </div>
+             <div class="fleches"><!--bloc pour les flèches de direction -->
+                <span><i id="gauche" class="fa-solid fa-angle-left fa-2xl" ></i></span>
+                <span><i id="droite" class="fa-solid fa-angle-right fa-2xl"></i></span>
+             </div>
+        </section>
+        <nav><!--menu de navigation -->
+            <div id="toggle-btn"><!--boutton de menu -->
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <ul id="ulref">
+                <li>Réalisations</li>
+                <li>Entrées</li>
+                <li>Plats</li>
+                <li>Desserts</li>
+                <li>Boissons</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+        <section class="articles"><!--bloc des articles-->
+            <article class="un"><!--article 1-->
+                <h5>Suggestions de la semaine :</h5><br/>
+                <p><b>- Entrées</b></p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta, cupiditate!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                <p><b>- PLATS</b></p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                <p><b>- DESSERT</b></p>
+                <p>Lorem ipsum dolor sit amet.</p>
+            </article>
+            <article class="deux"><!--article 2-->
+                <h4>Nous vous proposons trois articles au choix</h4><br/>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+                <p>Ne ratez pas l'occasion des meilleurs tables.</p>
+                <button class="bouton"><i class="fa-solid fa-file-alt fa-xl"></i>&nbsp;Reserver votre table</button><!--boutton contenant une icône de fichier-->
+            </article>
+        </section>
+        <section class="temoignages"><!--temoignages des clients-->    
+            <h2>Ce que nos clients pensent de nous</h2>
+            <div class="temoignage_card">  
+                 <div class="card"><!--carte où est inscrit l'avis du client 1-->
+                    <h5 class="name">Cindy M.</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat!</p>
+                </div>
+                <div class="card"><!--carte où est inscrit l'avis du client 2-->
+                    <h5 class="name">Joëlle D.</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique?
+                    </p>
+                </div>
+                <div class="card"><!--carte où est inscrit l'avis du client 3-->
+                    <h5 class="name">Fabrice C.</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur.</p>
+                </div>
+                <div class="card"><!--carte où est inscrit l'avis du client 4-->
+                    <h5 class="name">Romuald H.</h5>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque!</p>
+                </div>
+                <div class="card"><!--carte où est inscrit l'avis du client 5-->
+                    <h5 class="name">Patricia H.</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse.
+                    </p>
+                </div>
+            </div>     
+            <button>Plus de temoignages Clients ici</button>
+        </section>
+        <footer>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+        </footer>
+     </div>
+     <script>
+        //Menu Humburger
+        const btn=document.querySelector("#toggle-btn");
+        const ul=document.getElementById("ulref");
+        btn.onclick =()=>ul.style.opacity==0 ? ul.style.opacity=1 : ul.style.opacity=0;
+     
+        //Carrousel
+        //recuperation des elements à animer
+        const carrousel_content=document.querySelector('.images');
+        const prev=document.getElementById('gauche');
+        const next=document.getElementById('droite');
+        let translate =0;
+
+        //evenement sur les élements recuperé
+        //sur le bouton prev
+        prev.onclick =()=>{
+            translate+=100;
+            if(translate>0)
+            translate=0;
+            carrousel_content.style.transform='translateX('+ translate +'%)';
+        }
+        //sur le bouton prev
+        next.onclick =()=>{
+            translate-=100;
+            if(translate<-200)
+            translate=-200;
+            carrousel_content.style.transform='translateX('+ translate +'%)';
+        }
+     </script>
+</body>
+</html>
